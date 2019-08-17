@@ -23,7 +23,7 @@
         <p v-else> Out of stock</p>
         
         <ul> 
-            <li v-for="detail"></li>
+            <li v-for="variant in variants" :keys="variant.variantID"></li>
         </ul>
     </div>
 
