@@ -22,11 +22,18 @@
         <p v-if="inventory > 10"> In stock</p>
         <p v-else> Out of stock</p>
         
-        <ul> 
-            <li v-for="variant in variants" :keys="variant.variantID"></li>
+        <ul>  
+            <li v-for="detail in details">{{ detail }}</li>
         </ul>
-    </div>
+        <div v-for="variant in variants" :key="variant.variantID">
+            <p @mouseover="updateProduct(variant.variantImage">{{ variant.variantColour }}</p>
+        </div>
+    <button v-on:click="addToCart">Add to Cart</button>
 
+    </div>
+        <div class="cart">
+            <p>Cart({{cart}})</p>
+        </div>
     </div>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
